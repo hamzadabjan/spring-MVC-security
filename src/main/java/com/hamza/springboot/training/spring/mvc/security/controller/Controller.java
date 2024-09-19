@@ -11,4 +11,16 @@ public class Controller {
     public String showHome(){
         return "home";
     }
+
+    @GetMapping("/leaders")
+    public String showleaders(){
+        return "leaders";
+    }
+
+    @GetMapping("/system")
+    public String showsystem(){
+        return "system";
+    }
+
+
 }

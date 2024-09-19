@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>Hamza Dabjan Co. Home Page</title>
@@ -11,9 +11,23 @@
 <hr>
 Welcome to Hamza Dabjan Co. Home Page!
 
-<br>
+<hr>
+
+    <p>
+        User: <span sec:authentication="principal.username"></span>
+        <br>
+        Roles: <span sec:authentication="principal.authorities"></span>
+    </p>
+
 <br>
 <hr>
+
+<p>
+    <a th:href="@{/leaders}">Leaders Meeting</a> (Only for managers)
+</p>
+<p>
+    <a th:href="@{/system}">Admins Access</a> (Only for admins)
+</p>
 
 <form action="#" th:action="@{/logout}" method="post">
     <input type="submit" value="Logout" />
