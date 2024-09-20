@@ -22,13 +22,20 @@ Welcome to Hamza Dabjan Co. Home Page!
 <br>
 <hr>
 
+<div sec:authorize="hasRole('MANAGER')">
 <p>
     <a th:href="@{/leaders}">Leaders Meeting</a> (Only for managers)
 </p>
+</div>
+
+
+<div sec:authorize="hasRole('ADMIN')">
 <p>
     <a th:href="@{/system}">Admins Access</a> (Only for admins)
 </p>
+</div>
 
+<hr>
 <form action="#" th:action="@{/logout}" method="post">
     <input type="submit" value="Logout" />
 </form>
